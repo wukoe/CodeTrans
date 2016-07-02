@@ -249,13 +249,15 @@ def ConvFile(fileIn,fileOut=None):
     if not fileOut:
         fileOut=fname[0]+'.py'
 
-    with open(fileIn) as fh:
+    with open(fileIn,'r') as fh:
         S=fh.read()
 
     S=convert(S)
 
-    with open(fileOut,'w') as fh:
+    with open(fileOut,'w',encoding='utf-8') as fh:
         fh.write(S)
+
+    return
 
 
 if __name__ == '__main__':
